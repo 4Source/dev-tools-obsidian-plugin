@@ -1,7 +1,7 @@
-import { App, Modal, Setting, TextAreaComponent } from "obsidian";
+import { App, Modal, Setting, TextAreaComponent } from 'obsidian';
 
 export class SetLayoutModal extends Modal {
-	constructor(app: App) {
+	constructor (app: App) {
 		super(app);
 
 		this.setTitle('Set Layout');
@@ -13,7 +13,7 @@ export class SetLayoutModal extends Modal {
 
 		this.app.workspace.on('layout-change', () => {
 			txtArea.setValue(JSON.stringify(this.app.workspace.getLayout(), undefined, 2));
-		})
+		});
 
 		new Setting(this.contentEl)
 			.addTextArea((text) => {
@@ -22,9 +22,9 @@ export class SetLayoutModal extends Modal {
 					layout = value;
 				})
 					.setValue(JSON.stringify(this.app.workspace.getLayout(), undefined, 2));
-					txtArea.inputEl.style.width = '1000px';
-					txtArea.inputEl.style.height = '1000px';
-			})
+				txtArea.inputEl.style.width = '1000px';
+				txtArea.inputEl.style.height = '1000px';
+			});
 
 		new Setting(this.contentEl)
 			.addButton((btn) => {
@@ -32,14 +32,13 @@ export class SetLayoutModal extends Modal {
 					.setCta()
 					.onClick(() => {
 						this.app.workspace.setLayout(JSON.parse(layout));
-					})
+					});
 			})
 			.addButton((btn) => {
 				btn.setButtonText('Close')
 					.onClick(() => {
 						this.close();
-					})
+					});
 			});
-
 	}
 }

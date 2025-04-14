@@ -17,12 +17,12 @@ export default class MyPlugin extends Plugin {
 			name: 'Set Layout',
 			callback: () => {
 				new SetLayoutModal(this.app).open();
-			}
-		})
+			},
+		});
 	}
 
 	onunload () {
-		
+
 	}
 
 	async loadSettings () {
