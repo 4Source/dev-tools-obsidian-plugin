@@ -1,6 +1,6 @@
 {
-	"name": "obsidian-plugin-template",
-	"description": "",
+	"name": "dev-tools",
+	"description": "This plugin provides developers useful tools",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
